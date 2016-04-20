@@ -13,15 +13,19 @@ public class GUI extends Frame{
 	private JTextField txt1,txt2,txt3,txt4;
 	private JLabel label1,label2,label3,label4;
 	private JButton button1,button2,button3,button4,button5;
+	JTextField [] Text = new JTextField[4];
+	JLabel [] label = new JLabel[4];
+	private int i;
 public GUI(){
-	txt1=new JTextField(10);
+	/*txt1=new JTextField(10);
 	txt2=new JTextField(10);
 	txt3=new JTextField(10);
-	txt4=new JTextField(10);
-	label1=new JLabel("first name");
-	label2=new JLabel("last name");
-	label3=new JLabel("username");
-	label4=new JLabel("password");
+	txt4=new JTextField(10);*/
+	
+	label[0]=new JLabel("first name");
+	label[1]=new JLabel("last name");
+	label[2]=new JLabel("username");
+	label[3]=new JLabel("password");
 	button1=new JButton("turn in");
 	button2=new JButton("2");
 	button3=new JButton("3");
@@ -33,15 +37,13 @@ public GUI(){
 	switch(s5){
 	case "FlowLayout":
 		setLayout(new FlowLayout());
-		add(label1);
-		add(txt1);
-		add(label2);
-		add(txt2);
-		add(label3);
-		add(txt3);
-		add(label4);
-		add(txt4);
+		for(int i=0;i<=3;i++){
+			
+		add(label[i]);	
+		Text[i] = new JTextField(8);
+		add(Text[i]);}
 		add(button1);
+		
 		break;
 	case"BorderLayout":
 		setLayout(new BorderLayout());
@@ -53,14 +55,11 @@ public GUI(){
 		break;
 	case"GridLayout":
 		setLayout(new GridLayout(5,2));
-		add(label1);
-		add(txt1);
-		add(label2);
-		add(txt2);
-		add(label3);
-		add(txt3);
-		add(label4);
-		add(txt4);
+		for(int i=0;i<=3;i++){
+			
+			add(label[i]);	
+			Text[i] = new JTextField(8);
+			add(Text[i]);}
 		add(button1);
 		break;
 	}
